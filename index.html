@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6Z18BQ4EXC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9QM4YJZSQX');
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>go.intellink.gv/my.policy</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      background-color: #d4d4d4;
+      color: #222;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: linear-gradient(180deg, #1a6fad 0%, #1562a0 40%, #0e4f87 100%);
+      display: flex;
+      align-items: center;
+      padding: 6px 12px;
+      height: 88px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* globe texture on the right */
+    header::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 340px;
+      height: 100%;
+      background:
+        radial-gradient(ellipse 200px 120px at 80% 50%, rgba(255,255,255,0.08) 0%, transparent 70%),
+        repeating-linear-gradient(
+          15deg,
+          transparent,
+          transparent 18px,
+          rgba(255,255,255,0.04) 18px,
+          rgba(255,255,255,0.04) 19px
+        );
+    }
+
+    .header-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 1;
+    }
+
+    .logo-badge {
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      border: 3px solid #c8a84b;
+      background: radial-gradient(circle at 40% 35%,
+        #2a5fa8 0%, #1a4a8a 40%, #0d2f60 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .logo-badge::before {
+      content: '★';
+      color: rgba(255,255,255,0.6);
+      font-size: 28px;
+      text-shadow: 0 0 10px rgba(255,255,255,0.4);
+    }
+
+    .logo-badge-inner {
+      position: absolute;
+      bottom: 6px;
+      font-size: 6px;
+      color: #c8a84b;
+      letter-spacing: 1px;
+      font-weight: bold;
+    }
+
+    .logo-text h1 {
+      font-size: 42px;
+      font-weight: bold;
+      color: #ffffff;
+      line-height: 1;
+      letter-spacing: -1px;
+      text-shadow: 1px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .logo-text p {
+      font-size: 12px;
+      color: #cce3f7;
+      margin-top: 2px;
+      font-style: italic;
+    }
+
+    .reset-btn {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+      background: #a0a0a0;
+      border: 1px solid #888;
+      border-radius: 4px;
+      color: #fff;
+      font-size: 11px;
+      padding: 4px 10px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .reset-btn::before {
+      content: '⊘';
+      color: #e05050;
+    }
+
+    /* ── MAIN LAYOUT ── */
+    .main-container {
+      display: flex;
+      min-height: calc(100vh - 88px - 40px);
+    }
+
+    /* ── LEFT SIDEBAR ── */
+    .sidebar {
+      width: 340px;
+      min-width: 340px;
+      background: #e8e8e8;
+      border-right: 1px solid #bbb;
+      padding: 14px 16px;
+    }
+
+    .sidebar p.intro {
+      font-size: 12.5px;
+      line-height: 1.5;
+      color: #222;
+      margin-bottom: 14px;
+    }
+
+    .sidebar p.intro a {
+      color: #0645ad;
+      text-decoration: underline;
+    }
+
+    .auth-option {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 20px 0 10px;
+    }
+
+    .cac-img {
+      width: 68px;
+      height: 80px;
+      background: linear-gradient(135deg, #f5f0e8 0%, #e8dcc8 100%);
+      border: 1px solid #aaa;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 8px;
+      color: #444;
+      gap: 3px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cac-img::before {
+      content: '👤';
+      font-size: 24px;
+    }
+
+    .cac-img::after {
+      content: 'LOGIN';
+      font-size: 7px;
+      font-weight: bold;
+      color: #333;
+      letter-spacing: 1px;
+    }
+
+    .auth-option a {
+      color: #0645ad;
+      text-decoration: underline;
+      font-size: 12.5px;
+    }
+
+    /* partner login section */
+    .partner-section {
+      margin-top: 120px;
+      text-align: center;
+    }
+
+    .partner-section h3 {
+      font-size: 12.5px;
+      font-weight: normal;
+      color: #222;
+      margin-bottom: 10px;
+    }
+
+    .partner-logos {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .badge-leep {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, #3a5fa8, #1a2f60);
+      border: 2px solid #aaa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 8px;
+      color: #fff;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      text-align: center;
+    }
+
+    .badge-riss {
+      width: 80px;
+      height: 44px;
+      background: linear-gradient(135deg, #c8102e 0%, #002868 50%, #c8102e 100%);
+      border: 2px solid #aaa;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: bold;
+      color: #fff;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    }
+
+    .partner-links {
+      display: flex;
+      gap: 24px;
+      font-size: 12px;
+    }
+
+    .partner-links a {
+      color: #0645ad;
+      text-decoration: underline;
+    }
+
+    /* ── RIGHT CONTENT ── */
+    .content {
+      flex: 1;
+      background: #f5f5f5;
+      padding: 40px 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .warning-box {
+      max-width: 900px;
+      width: 100%;
+    }
+
+    .warning-box h2 {
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      color: #111;
+      margin-bottom: 28px;
+    }
+
+    .warning-box p {
+      font-size: 12.5px;
+      line-height: 1.6;
+      color: #222;
+      margin-bottom: 14px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #c8c8c8;
+      border-top: 1px solid #aaa;
+      padding: 10px 16px;
+      font-size: 11px;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    /* ── MODAL OVERLAY ── */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal {
+      background: #fff;
+      border: 3px solid #b30000;
+      border-radius: 4px;
+      max-width: 480px;
+      width: 90%;
+      padding: 0;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.45);
+      font-family: Arial, Helvetica, sans-serif;
+      overflow: hidden;
+    }
+
+    .modal-header {
+      background: #b30000;
+      color: #fff;
+      padding: 10px 16px;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .modal-header::before {
+      content: '⚠';
+      font-size: 16px;
+    }
+
+    .modal-body {
+      padding: 22px 24px;
+      text-align: center;
+    }
+
+    .modal-body .ex-line {
+      font-size: 13px;
+      font-weight: bold;
+      color: #b30000;
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+    }
+
+    .modal-body .message {
+      font-size: 13px;
+      line-height: 1.6;
+      color: #222;
+      margin-bottom: 14px;
+    }
+
+    .modal-body .message strong {
+      color: #0645ad;
+    }
+
+    .modal-footer {
+      padding: 12px 24px 18px;
+      text-align: center;
+    }
+
+    .modal-close-btn {
+      background: #b30000;
+      color: #fff;
+      border: none;
+      padding: 7px 28px;
+      font-size: 13px;
+      font-weight: bold;
+      border-radius: 3px;
+      cursor: pointer;
+      letter-spacing: 0.5px;
+    }
+
+    .modal-close-btn:hover {
+      background: #8a0000;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-logo">
+      <img src="Intelink_Logo.png" alt="Intelink Logo" style="width: 80px; height: 80px;">
+      </div>
+      <div class="logo-text">
+        <h1>  IntelLink</h1>
+        <p>  Driven by Mission, Enabled by Innovation</p>
+      </div>
+    </div>
+    <button class="reset-btn">Reset Login Session</button>
+  </header>
+
+  <!-- MAIN -->
+  <div class="main-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <p class="intro">
+        Please choose one of the following authentication options in order to access IntelLink.
+        Selection of an authentication method constitutes your acceptance of both IntelLink's
+        <a href="#">Terms Of Use</a> and the monitoring of system activity, as described in the
+        warning notice to the right.
+      </p>
+
+      <div class="auth-option">
+        <img src="CAClogo.png" alt="CAC Card" style="width: 78px; height: 90px;">
+        <a href="#">CAC or PIV Certificate</a>
+      </div>
+
+      <div class="partner-section">
+        <h3>IntelLink Federated Partner Login</h3>
+        <div class="partner-logos">
+          <img src="leep_logo.gif" alt="LEEP Logo" style="width: 65px; height: 65px;">
+          <img src="RISS_Logo.png" alt="RISS Logo" style="width: 65px; height: 65px;">
+        </div>
+        <div class="partner-links">
+          <a href="#">LEEP Users</a>
+          <a href="#">RISSNET Users</a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="content">
+      <div class="warning-box">
+        <h2>U.S. Government Warning</h2>
+        <p>
+          This is a United States Government computer system. This computer system, including all related equipment,
+          networks, and network devices, including Internet access, are provided only for authorized U.S. Government use.
+          U.S. Government computer systems may be monitored for all lawful purposes, including ensuring that their use is
+          authorized, for management of the system, to facilitate protection against unauthorized access, and to verify
+          security procedures, survivability, and operational security. Monitoring includes authorized attacks by authorized
+          U.S. Government entities to test or verify the security of this system. During monitoring, information may be
+          examined, recorded, copied, and used for authorized purposes. All information including personal information,
+          placed on or sent over this system may be monitored.
+        </p>
+        <p>
+          Use of this U.S. Government system, authorized or unauthorized, constitutes consent to monitoring of this system.
+          Unauthorized use may subject you to criminal prosecution. Evidence of unauthorized use collected during monitoring
+          may be used for administrative, criminal or other adverse actions.
+        </p>
+        <p>
+          Client network = Internet(AJ)
+        </p>
+      </div>
+    </main>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    Use of this U.S. Government system, authorized or unauthorized, constitutes consent to monitoring of this system.
+    Unauthorized use may subject you to criminal prosecution. Evidence of unauthorized use collected during monitoring
+    may be used for administrative, criminal, or other adverse actions.
+  </footer>
+
+
+  <!-- EXERCISE MODAL -->
+  <div class="modal-overlay" id="exerciseModal">
+    <div class="modal">
+      <div class="modal-header">Security Awareness Notice</div>
+      <div class="modal-body">
+        <div class="ex-line">EXERCISE &nbsp; EXERCISE &nbsp; EXERCISE</div>
+        <p class="message">
+          You have accessed a suspicious website and clicked a potentially malicious link,
+          your action has been recorded for the exercise.<br><br>
+          <a href="https://www.cyber.mil/cyber-awareness-challenge">Cyber Awareness Challenge | Cyber Exchange</a>
+        </p>
+        <div class="ex-line">EXERCISE &nbsp; EXERCISE &nbsp; EXERCISE</div>
+      </div>
+      <div class="modal-footer">
+        <button class="modal-close-btn" id="modalCloseBtn">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById('exerciseModal');
+    const closeBtn = document.getElementById('modalCloseBtn');
+
+    function showModal(e) {
+      e.preventDefault();
+      modal.classList.add('active');
+    }
+
+    // Wire all links
+    document.querySelectorAll('a').forEach(el => el.addEventListener('click', showModal));
+
+    // Wire all buttons except the modal close button
+    document.querySelectorAll('button:not(#modalCloseBtn)').forEach(el => el.addEventListener('click', showModal));
+
+    // Close on OK button
+    closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+
+    // Close on overlay background click
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) modal.classList.remove('active');
+    });
+  </script>
+
+</body>
+</html>
